@@ -1,0 +1,2 @@
+play -G -r 96000 -qn synth 3 sin 300:900k rate -q 3k pad 0 3 repeat 3 trim 0 -3 speed 16
+

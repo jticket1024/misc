@@ -1,0 +1,5 @@
+play -qn -c2 synth 0.05 sine 350 sine 440  channels 1 pad 0 0.05 repeat 19 overdrive 1 vol 0.5 speed 4 pad 0 0.5 repeat 2 pad 0 1 repeat 2 speed 0.25 bend 0,-48000,30 trim 0 2 norm reverse speed 2 pad 0 0.5 reverb
+
+play -qn -c2 synth 0.05 sine 350 sine 440  channels 1 pad 0 0.05 repeat 19 overdrive 1 vol 0.5 speed 4 pad 0 0.5 repeat 2 pad 0 1 repeat 2
+
+play -qn -c2 synth 0.05 sine 350 sine 440  fade 0.01 channels 1 pad 0 0.05 repeat 19 overdrive 1 vol 0.5 speed 4 pad 0 0.5 repeat 2 pad 0 1  repeat 2 pad 0 3 reverb 75 100 100 50 50 2

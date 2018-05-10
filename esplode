@@ -1,0 +1,1 @@
+play -nV0 synth pi fade h 0 1 1  norm  pad 0 1   reverb overdrive riaa speed 32  repeat 10;play -nV0 synth pi fade h 0 1 1  norm  pad 0 1   reverb overdrive riaa 

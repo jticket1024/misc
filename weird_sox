@@ -1,0 +1,4 @@
+play -qn synth 1000 si 1:1000k pitch -4800 rate 48k trim 1 9  speed 16 overdrive 100 reverse
+#play wouldn't let me do bending at this point, so I made stuff.wav
+play -q stuff.wav  bend 0.3,-1200,0.7
+

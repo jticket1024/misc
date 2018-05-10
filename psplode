@@ -1,0 +1,1 @@
+x=9;y=0;while [ $x -gt 0 ]; do play -q -nV0 synth pi fade h 0 1 1 norm pad 0 1 reverb overdrive riaa speed 32 remix v0.$x v0.$y;((x--));((y++));done;play -q -c2 -nV0 synth pi fade h 0 1 1  norm  pad 0 1   reverb overdrive riaa 
