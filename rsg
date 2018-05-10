@@ -1,0 +1,1 @@
+while : ; do play -n synth .05 sin $(shuf -n 1 -e {1000..44000}) sin $(shuf -n 1 -e {1000..44000}) remix - reverb&sleep 0.05;done

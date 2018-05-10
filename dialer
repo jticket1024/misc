@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# http://social.stormdragon.tk/storm
+# Released under the terms of the WTFPL: http://wtfpl.net
+
+toneLength=.03 # Length of the tone
+toneGap=.01 # Time between tones
+pauseLength=1 # Length of pause, represented by a , in the number
+set -o noglob
+if [ $# -eq 0 ]; then
+    read -p "Enter phone number containing text: " numberText
+else
+    numberText="$@"
+fi
+numberText="$(echo "${numberText^^}" | tr -cd "[:alnum:]#*,")"
+for i in $(seq 0 ${#numberText}); do
+    if [ ${#numberText} -eq 11 ]; then 
+        if [ $i -eq 0 ]; then
+            echo -n "+"
+        fi
+        if [ $i -eq 1 ]; then
+            echo -n " ("
+        fi
+        if [ $i -eq 4 ]; then
+            echo -n ") "
+        fi
+        if [ $i -eq 7 ]; then
+            echo -n "-"
+        fi
+    fi
+    if [ ${#numberText} -eq 10 ]; then 
+        if [ $i -eq 0 ]; then
+            echo -n "("
+        fi
+        if [ $i -eq 3 ]; then
+            echo -n ") "
+        fi
+        if [ $i -eq 6 ]; then
+            echo -n "-"
+        fi
+    fi
+    if [ ${#numberText} -eq 7 ]; then 
+        if [ $i -eq 3 ]; then
+            echo -n "-"
+        fi
+    fi
+    echo -n ${numberText:$i:1}|tr A-Z 22233344455566677778889999
+    case "${numberText:$i:1}" in
+        \#)
+            tone="sin 941 sin 1477"
+        ;;
+        0)
+            tone="sin 941 sin 1336"
+        ;;
+        1)
+            tone="sin 697 sin 1209"
+        ;;
+        A|B|C|2)
+            tone="sin 697 sin 1336"
+        ;;
+        D|E|F|3)
+            tone="sin 697 sin 1477"
+        ;;
+        G|H|I|4)
+            tone="sin 770 sin 1209"
+        ;;
+        J|K|L|5)
+            tone="sin 770 sin 1336"
+        ;;
+        M|N|O|6)
+            tone="sin 770 sin 1477"
+        ;;
+        P|Q|R|S|7)
+            tone="sin 852 sin 1209"
+        ;;
+        T|U|V|8)
+            tone="sin 852 sin 1336"
+        ;;
+        W|X|Y|Z|9)
+            tone="sin 852 sin 1477"
+        ;;
+        \*)
+            tone="sin 941 sin 1209"
+        ;;
+        ",")
+            sleep $pauseLength
+            continue
+    esac
+    if [ $i -lt ${#numberText} ]; then
+        play -V0 -qn synth $toneLength $tone pad $toneGap remix -
+    fi
+done
+echo
+exit 0

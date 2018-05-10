@@ -1,0 +1,85 @@
+**intro**
+Written by Jeremiah Ticket,
+Jerry on IRC
+*description*
+this document is meant to explain some IRC basics. Please note that this is not a definitive irc guide.
+
+each section will be noted by two asterisks (**)
+Each subsection will be noted by an asterisk (*)
+
+*General*
+These are general IRC commands. These work in most if not all clients.
+
+To change your nick:
+/nick newnick
+
+To join a channel:
+/join #channel
+
+To change the topic of a channel:
+/topic topic
+
+To send a private message:
+/msg person message
+To set moderation:
+/mode #channel +m
+In this mode, only operators will be abel to talk, and others if they are voiced (+v)
+
+To manually voice a user, must be oper in chan and mode +m for moderated must be set:
+/mode #channel +v nick
+Some clients support voicing via a command, as in:
+/voice user
+See your clients documentation to find out what commands your client supports.
+
+To manually devoice a user:
+/mode #channel -v nick
+Some clients support a command to do this, as in:
+/devoice user
+See your clients documentation to find out what commands your client supports.
+
+To invite a user:
+/invite user
+
+To set a channel to be invite only:
+/mode #channel +i
+
+To knock on an invite only channel, if not mode +K for no knock:
+/knock #channel reason
+
+**Services**
+this section is for IRC services. Nickserv, Chanserv, etc.
+
+*chanserv*
+
+User = the user/nick
+#channel = the channel
+channpass = the channel password
+description = a short description of the channel
+
+To register a channel:
+/msg chanserv #channel channpass description
+Some services do not require a password for channels, they identify you when you identify with nickserv.
+To verify this:
+/msg chanserv help register
+If this is the case:
+/msg chanserv register #channel description
+
+To Auto-op a user, must be a registered nick:
+/msg chanserv aop #channel add user
+
+To auto-voice a user, must be a registered nick:
+/msg chanserv vop #channel add user
+
+*Nickserv*
+
+User = user/nick of the person
+password = password
+newnick = new nickname if grouping
+oldnick = nick previously registered if grouping
+
+To register your nick:
+/msg nickserv register password email
+
+To group a nick with another nick, new nick must not be registered:
+/nick newnick
+/msg nickserv group oldnick password
