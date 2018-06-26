@@ -46,7 +46,7 @@ fuck
 I got fucked at the used car lot
 Awe fuck it
 I guess I'm really fucked now
-Don't fuck with me budy
+Don't fuck with me buddy
 I don't understand this fucking question
 Who the fuck was that
 I don't like what the fuck is going on here
