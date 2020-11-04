@@ -8,9 +8,9 @@ fi
 
 number=(schschschtktktktktktktktktktk schtk schtktk schtktktk schschtktktktk schschtktktktktk schschtktktktktktk schschschtktktktktktktk schschschtktktktktktktktk schschschtktktktktktktktktk)
 
-espeak -a 200 -s 20 -p 65 [[nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn 2> /dev/null&
+espeak-ng -a 200 -s 20 -p 65 [[nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn 2> /dev/null&
 sleep 1.75
 for i in ${dial[@]} ; do
-espeak -s 350 -a 200 ${number[$i]}
+espeak-ng -s 350 -a 200 ${number[$i]}
 sleep 0.$((RANDOM % 3 + 2))
 done
